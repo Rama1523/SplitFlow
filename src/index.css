@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color-scheme: light dark;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* WCAG AAA: Foco visible corporativo y de máximo contraste por teclado (>= 7:1) */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid #0f172a;
+    outline-offset: 2px;
+  }
+
+  .dark button:focus-visible,
+  .dark a:focus-visible,
+  .dark input:focus-visible,
+  .dark select:focus-visible,
+  .dark textarea:focus-visible,
+  .dark [tabindex]:focus-visible {
+    outline: 2px solid #f8fafc;
+    outline-offset: 2px;
+  }
+
+  /* Eliminar cualquier resplandor o efecto neón estridente */
+  * {
+    text-shadow: none !important;
+  }
+
+  /* Soporte de accesibilidad para usuarios con preferencia de movimiento reducido */
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

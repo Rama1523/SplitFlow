@@ -1,0 +1,6 @@
+{
+  "name": "SplitFlow",
+  "description": "Gestor inteligente de gastos compartidos, presupuestos del hogar y minimización de deudas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
